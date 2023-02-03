@@ -82,7 +82,13 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/KHdaRgg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  
+- Step 3 Install Active Directory
+  - Go to DC-1 Open Server Manager
+    - Select Add Roles and features
+    - Select "Server Roles"
+    - check Active Directory Domain Sevices
+    - Click on "Add Features"
 </p>
 <br />
 
