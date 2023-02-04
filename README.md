@@ -142,36 +142,82 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/CQdJ5R8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+- In Active Directory Users and Computers, right click the doomain (mydomain.com)-> "New" -> Originizational Unit"
+- Create 2 orginizational units for administrators (_ADMINS) and employees (_EMPLOYEES)
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/oj4gW8J.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+
+<p>
+<img src="https://i.imgur.com/oguJria.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+
+- Select _ADMINS organizational unit and right click. In th eright window  go to "New" and click "User"
+- Fill in the boxes to create new user "Jane Doe" username "jane_admin"
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/AX0NGkg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/dA60MU4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+- Once the account has been created, right click it and go to "Properties"-> click "Member of" tab->click the "Add.." button, type in domain and click the "Check Names" button, type in domain and click the "Check Names" button.->Click "Domain Admins" and press "OK" and "Apply"
+- Log out of DC-1 as "labuser" and log back in as the administrator (jane_admin)
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/u9bka6U.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+
+- Step 5 Join Client to Domain Controller
+  - Go to the Azure portal. Go to the Client-1 virtual machine and click on the "Networking" section underneath "Settings" on the left.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/wD7wqHm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+
+- Click on "DNS Servers"  then click "Custom". Type in the private IP for DC-1 (10.0.0.4)
+- Restart Client-1 and log back in. Once logged in right clickon the start menu and click on "System"
+- On the right had side click "Rename this PC (advanced). " Then click on the "Change" button and type in the name (mydomain.com)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/oa8vFf2" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+
+- Step 6 Setup Remote Desktop for non-administrative users to Client-1
+  -Login to Client-1 using the domain and admin account (mydomain.com\jane-admin)
+  -Right click the Start menu and click "System" Then "Remote desktop" on the right side.
+  -Click "Add.." and type in "Domain users"
+  -Click Check Names" and click OK
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/CKQt7Ua.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
